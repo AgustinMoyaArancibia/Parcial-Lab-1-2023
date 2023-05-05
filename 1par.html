@@ -6,12 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, iniciarial-scale=1.0">
     <title>Parcial Lab 1 Moya Agustin</title>
+
+
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        * {
+            font-family: "system-ui";
+            align-items: center;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid blueviolet;
+            border-collapse: collapse;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        .tHead {
+            cursor: pointer;
+            background-color: grey;
+        }
+
+        .tBody {
+            cursor: pointer;
+            background-color: aliceblue;
+        }
+
+        #lstTipo,
+        #inputEdadPromedio,
+        #btnEdadPromedio,
+        #btnAgregar,
+        #btnAlta,
+        #btnModificar,
+        #btnEliminar,
+        #btnCancelar,
+        #lstTipoABM {
+            background-color: lightblue;
+            cursor: pointer;
+
+
+
+        }
+
+        .formDatos {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+           
+
+        }
+
+       
+
+        #divColumnas,
+        p,
+        #btnAgregar {
+            margin: 5px;
+            
+
+        }
+    </style>
 </head>
 
 <body id="body">
     <div id="formDatos">
         <h2>Form Datos</h2>
-        <div class="flex">
+        <div class="formDatos">
             <div id="divFiltro">
                 <p>Filtrar por: </p>
                 <select name="lstTipo" id="lstTipo">
@@ -40,6 +110,9 @@
             <input type="checkbox" name="Robos" id="robos">Robos
             <input type="checkbox" name="Asesinatos" id="asesinatos">Asesinatos
         </div>
+
+   
+
         <table id="table">
             <thead>
                 <tr>
