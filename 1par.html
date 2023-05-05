@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, iniciarial-scale=1.0">
     <title>Parcial Lab 1 Moya Agustin</title>
 </head>
 
@@ -145,9 +145,9 @@
             '"asesinatos":1}]';
 
         let personasFiltradas = [];
-        let cadenaJSON = JSON.parse(lista);
+        let listaJSON = JSON.parse(lista);
 
-        cadenaJSON.map((elemento) => {
+        listaJSON.map((elemento) => {
             if ((typeof elemento.enemigo == 'undefined' && typeof elemento.robos == 'undefined' && typeof elemento.asesinatos == 'undefined')) {
                 personasFiltradas.push(new Heroe(elemento.id, elemento.nombre, elemento.apellido, elemento.edad, elemento.alterego, elemento.ciudad, elemento.publicado));
             }
@@ -175,10 +175,10 @@
         var array = [];
 
         function cargarCampos(element) {
-            let lstTipo = document.getElementById("lstTipo");
+            let listaTipo = document.getElementById("lstTipo");
             let tbody = document.getElementById("tbody");
 
-            if ((lstTipo.value == "Todos" || lstTipo.value == "Heroes") && element instanceof Heroe) {
+            if ((listaTipo.value == "Todos" || listaTipo.value == "Heroes") && element instanceof Heroe) {
                 let newRow = tbody.insertRow();
 
                 if (array[0]) {
@@ -232,7 +232,7 @@
                 }
             }
 
-            if ((lstTipo.value == "Todos" || lstTipo.value == "Villanos") && element instanceof Villano) {
+            if ((listaTipo.value == "Todos" || listaTipo.value == "Villanos") && element instanceof Villano) {
                 let newRow = tbody.insertRow(tbody.length);
 
                 if (array[0]) {
@@ -309,18 +309,18 @@
         }
 
         let btnAgregar = document.getElementById("btnAgregar");
-        let lstTipoABM = document.getElementById("lstTipoABM");
-        var lstHeroes = true;
+        let listaTipo = document.getElementById("lstTipoABM");
+        var listaHeroe = true;
 
         btnAgregar.addEventListener("click", (event) => { cargarABM() });
-        lstTipoABM.addEventListener("change", (event) => {
-            if (!lstHeroes) {
-                CambioTipo(lstTipoABM.value, "", "", "", "Enemigo: ", "Robos: ", "Asesinatos: ");
-                lstHeroes = true;
+        listaTipo.addEventListener("change", (event) => {
+            if (!listaHeroe) {
+                CambioTipo(listaTipo.value, "", "", "", "Enemigo: ", "Robos: ", "Asesinatos: ");
+                listaHeroe = true;
             }
             else {
-                CambioTipo(lstTipoABM.value, "", "", "", "AlterEgo: ", "Ciudad: ", "Publicado: ");
-                lstHeroes = false;
+                CambioTipo(listaTipo.value, "", "", "", "AlterEgo: ", "Ciudad: ", "Publicado: ");
+                listaHeroe = false;
             }
         });
 
@@ -362,9 +362,9 @@
 
 
         let body = document.getElementById("body");
-        body.addEventListener("load", init());
+        body.addEventListener("load", iniciar());
 
-        function init() {
+        function iniciar() {
             document.getElementById("divAbm").style.display = "none";
             document.getElementById("id").checked = true;
             document.getElementById("nombre").checked = true;
@@ -423,7 +423,7 @@
 
 
 
-        function getColumn(col) {
+        function getColumna(col) {
             let table = document.getElementById("table");
             let rLen = table.rows.length;
             let paso = false;
@@ -458,30 +458,30 @@
             crearTabla();
         }
 
-        let cId = document.getElementById("id");
-        let cNombre = document.getElementById("nombre");
-        let cApellido = document.getElementById("apellido");
-        let cEdad = document.getElementById("edad");
-        let cAlterEgo = document.getElementById("alterEgo");
-        let cCiudad = document.getElementById("ciudad");
-        let cPublicado = document.getElementById("publicado");
-        let cEnemigo = document.getElementById("enemigo");
-        let cRobos = document.getElementById("robos");
-        let cAsesinatos = document.getElementById("asesinatos");
+        let columnaId = document.getElementById("id");
+        let columnaNombre = document.getElementById("nombre");
+        let columnaApellido = document.getElementById("apellido");
+        let columnaEdad = document.getElementById("edad");
+        let columnaAlterEgo = document.getElementById("alterEgo");
+        let columnaCiudad = document.getElementById("ciudad");
+        let columnaPublicado = document.getElementById("publicado");
+        let columnaEnemigo = document.getElementById("enemigo");
+        let columnaRobos = document.getElementById("robos");
+        let columnaAsesinatos = document.getElementById("asesinatos");
 
 
 
 
-        cId.addEventListener("click", (event) => { getColumn(0) });
-        cNombre.addEventListener("click", (event) => { getColumn(1) });
-        cApellido.addEventListener("click", (event) => { getColumn(2) });
-        cEdad.addEventListener("click", (event) => { getColumn(3) });
-        cAlterEgo.addEventListener("click", (event) => { getColumn(4) });
-        cCiudad.addEventListener("click", (event) => { getColumn(5) });
-        cPublicado.addEventListener("click", (event) => { getColumn(6) });
-        cEnemigo.addEventListener("click", (event) => { getColumn(7) });
-        cRobos.addEventListener("click", (event) => { getColumn(8) });
-        cAsesinatos.addEventListener("click", (event) => { getColumn(9) });
+        columnaId.addEventListener("click", (event) => { getColumna(0) });
+        columnaNombre.addEventListener("click", (event) => { getColumna(1) });
+        columnaApellido.addEventListener("click", (event) => { getColumna(2) });
+        columnaEdad.addEventListener("click", (event) => { getColumna(3) });
+        columnaAlterEgo.addEventListener("click", (event) => { getColumna(4) });
+        columnaCiudad.addEventListener("click", (event) => { getColumna(5) });
+        columnaPublicado.addEventListener("click", (event) => { getColumna(6) });
+        columnaEnemigo.addEventListener("click", (event) => { getColumna(7) });
+        columnaRobos.addEventListener("click", (event) => { getColumna(8) });
+        columnaAsesinatos.addEventListener("click", (event) => { getColumna(9) });
 
 
         let thId = document.getElementById("thId");
